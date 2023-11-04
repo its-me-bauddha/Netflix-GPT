@@ -13,8 +13,8 @@ export const checkValidData = (email, password) => {
 };
 
 export const checkValidateName = (firstName, lastName) => {
-  const isFirstNameValid = /^[a-z ,.'-]+$/.test(firstName);
-  const isLastNameValid = /^[a-z ,.'-]+$/.test(lastName);
+  const isFirstNameValid = /^[A-Za-z ,.'-]+$/.test(firstName);
+  const isLastNameValid = /^[A-Za-z ,.'-]+$/.test(lastName);
 
   if (!isFirstNameValid) return "First Name is not valid";
   if (!isLastNameValid) return "Last Name is not valid";
