@@ -6,7 +6,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 const Form = () => {
@@ -16,7 +16,7 @@ const Form = () => {
   const password = useRef(null);
   const firstName = useRef(null);
   const lastName = useRef(null);
-  const navigate = useNavigate();
+
   const dispatch = useDispatch();
   const handleButtonClick = () => {
     // Validate the form data
@@ -54,7 +54,6 @@ const Form = () => {
                   displayName: displayName,
                 })
               );
-              navigate("/browse");
             })
             .catch((error) => {
               //handle error
@@ -77,8 +76,6 @@ const Form = () => {
       )
         .then((userCredentials) => {
           const user = userCredentials.user;
-          navigate("/browse");
-          console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;
