@@ -3,8 +3,12 @@ import { checkValidData, checkValidateName } from "../utils/validate";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 const Form = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
@@ -12,6 +16,8 @@ const Form = () => {
   const password = useRef(null);
   const firstName = useRef(null);
   const lastName = useRef(null);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleButtonClick = () => {
     // Validate the form data
     const message = checkValidData(email.current.value, password.current.value);
@@ -36,6 +42,25 @@ const Form = () => {
       )
         .then((userCredentials) => {
           const user = userCredentials.user;
+          updateProfile(user, {
+            displayName: firstName.current.value + " " + lastName.current.value,
+          })
+            .then(() => {
+              const { uid, email, displayName } = auth;
+              dispatch(
+                addUser({
+                  uid: uid,
+                  email: email,
+                  displayName: displayName,
+                })
+              );
+              navigate("/browse");
+            })
+            .catch((error) => {
+              //handle error
+              setErrorMessage(error.message);
+            });
+
           console.log(user);
         })
         .catch((error) => {
@@ -44,7 +69,7 @@ const Form = () => {
           setErrorMessage(errorMessage + " " + errorCode);
         });
     } else {
-      //signIn 
+      //signIn
       signInWithEmailAndPassword(
         auth,
         email.current.value,
@@ -52,6 +77,7 @@ const Form = () => {
       )
         .then((userCredentials) => {
           const user = userCredentials.user;
+          navigate("/browse");
           console.log(user);
         })
         .catch((error) => {
