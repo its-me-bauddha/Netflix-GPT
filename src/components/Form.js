@@ -144,7 +144,6 @@ const Form = () => {
           </span>{" "}
           Now
         </p>
-      
       </form>
     </div>
   );
