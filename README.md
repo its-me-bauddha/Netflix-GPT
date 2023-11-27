@@ -29,6 +29,9 @@
 - Update store with Trailer Video Data
 - Embedded the Youtube Video and make it autoplay and mute
 - Tailwind Classes to make Main Container look awesome
+- Creating Movie Suggestion List
+- Custom Hooks for Popular, Top Rated & Upcoming Movies List.
+- GPT Search Feature.
 
 ## Features
 
