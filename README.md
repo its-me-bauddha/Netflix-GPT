@@ -31,7 +31,9 @@
 - Tailwind Classes to make Main Container look awesome
 - Creating Movie Suggestion List
 - Custom Hooks for Popular, Top Rated & Upcoming Movies List.
-- GPT Search Feature.
+- GPT Search Page.
+- GPT Search Bar.
+- `Multi-Language Feature in our App`
 
 ## Features
 
