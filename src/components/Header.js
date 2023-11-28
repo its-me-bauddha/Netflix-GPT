@@ -47,8 +47,8 @@ const Header = () => {
     setShowProfile(!showProfile);
   };
   return (
-    <div className="absolute w-screen px-10 py-4 bg-gradient-to-b  from-black z-10  flex items-center justify-between ">
-      <img className="w-48" src={LOGO} alt="logo-netflix" />
+    <div className="absolute w-screen px-10 py-4 bg-gradient-to-b  from-black z-10  flex flex-col md:flex-row items-center justify-between ">
+      <img className="w-48 " src={LOGO} alt="logo-netflix" />
       {user && (
         <div className="flex">
           {showGptSearch && (

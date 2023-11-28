@@ -89,7 +89,7 @@ const Form = () => {
     <div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="absolute flex flex-col right-0 left-[400px] mt-[150px] w-96
+        className="absolute flex flex-col md:right-0 md:left-[400px] md:mt-[150px] w-96
         m-40 p-5 text-white bg-black rounded-lg bg-opacity-80"
       >
         <h1 className="text-3xl p-2 text-white">

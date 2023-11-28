@@ -8,7 +8,11 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img src={BG_IMAGE_URL} alt="netflix-bg" />
+        <img
+          className="h-screen md:w-screen object-cover"
+          src={BG_IMAGE_URL}
+          alt="netflix-bg"
+        />
       </div>
       <Form />
     </div>
