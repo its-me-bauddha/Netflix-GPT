@@ -11,7 +11,7 @@ const GptSearch = () => {
        *    GPT Search bar
        *    GPT Movie Suggestion
        */}
-      <div className="absolute -z-10">
+      <div className="fixed -z-40">
         <img src={BG_IMAGE_URL} alt="netflix-bg" />
       </div>
       <GptSearchBar />

@@ -8,8 +8,7 @@ export const API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNDQ0NDdhYTdmM2M5OWRlODFjODQxOTBhMDkzNGNmOSIsInN1YiI6IjY1NDYwNDBlMWFjMjkyN2IyYzdmZjQ1NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.olq1j4lTkqmjq2bASGK3nmx3vKeb7jqFa7lq6iHzts4",
+    Authorization: "Bearer" + process.env.REACT_APP_TMDB_KEY,
   },
 };
 
@@ -24,3 +23,7 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "japanese", name: "Japanese" },
   { identifier: "spanish", name: "Spanish" },
 ];
+
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
+export const USER_ROLE = "user";
+export const GPT_MODEL = "gpt-3.5-turbo";

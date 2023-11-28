@@ -9,9 +9,9 @@ const VideoTitle = ({ title, overview }) => {
     setMoreInfo(!showMoreInfo);
   };
   return (
-    <div className=" w-screen aspect-video pt-[20%] px-24 absolute text-white bg-gradient-to-r from-black">
-      <h1 className="text-6xl font-bold">{title}</h1>
-      <p className="py-6 text-lg w-1/2"> {showMoreInfo ? overview : false}</p>
+    <div className=" w-screen aspect-video pt-[20%] px-16 absolute text-white bg-gradient-to-r from-black">
+      <h1 className="text-4xl font-bold">{title}</h1>
+      <p className="py-6 text-lg w-1/3"> {showMoreInfo ? overview : false}</p>
       <div className="">
         <button className="bg-pure-greys-5 text-black p-2 text-bold  px-8 text-lg rounded-sm mx-4   hover:opacity-60">
           <div className="flex items-center gap-3">
